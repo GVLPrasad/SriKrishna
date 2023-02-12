@@ -1,0 +1,190 @@
+<mat-card style="width:400px">
+  <mat-card-title fxLayoutAlign="center ceenter">Placement</mat-card-title>
+  <div fxLayoutAlign="center ceenter" *ngIf="false">
+    <mat-card style="width: 400px; height: 295px">
+      <form fxLayout="column" fxLayoutAlign="center center" name="login" #login="ngForm">
+
+        <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+          <mat-label>UserName</mat-label>
+
+          <input matInput type="text" name="useName" placeholder="UserName" required pattern="^[a-zA-Z\s]*$" />
+          <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+                    <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+        </mat-form-field>
+        <!-- <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+                <mat-label> Email</mat-label>
+                <input matInput type="email" name="email" placeholder="abc.xyz@toucanus.com" required
+                    pattern="^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)[a-z](-?[a-z])+$" />
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-error *ngIf="emailx.errors?.['required']">Email is required</mat-error>
+                        <mat-error *ngIf="emailx.errors?.['pattern']">please enter a valid email</mat-error>
+            </mat-form-field> -->
+        <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" name="password" />
+
+          <!-- <mat-error *ngIf="passwordx.errors?.['required']"> password is required</mat-error>
+                        <mat-error *ngIf="passwordx.errors?.['pattern']">please enter a valid password</mat-error> -->
+        </mat-form-field>
+
+
+      </form>
+      <button mat-raised-button type="button" color="accent" style="width: 100%" [disabled]="login.invalid">ADD</button>
+    </mat-card>
+
+
+  </div>
+
+
+
+  <mat-card-content>
+    <div>
+      <form fxLayout="column" fxLayoutAlign="center center" name="data" #data="ngForm">
+        <!-- <div fxLayout="row" fxLayoutGap="20px">
+        <div fxFlex="50" fxLayout="column">
+          <mat-form-field class="mat-field" appearance="outline">
+            <mat-label>EMP ID</mat-label>
+  
+            <input matInput type="text" name="empid" placeholder="EMP ID" required />
+           
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxLayout="column">
+          <mat-form-field class="mat-field" appearance="outline">
+            <mat-label>CTC</mat-label>
+  
+            <input matInput type="text" name="ctc" placeholder="CTC" required />
+           
+          </mat-form-field>
+        </div>
+      </div> -->
+        <div fxLayout="column">
+          <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+            <mat-label>Year of Passedout</mat-label>
+
+            <mat-select>
+              <mat-option value="2020">2020</mat-option>
+              <mat-option value="2021">2021</mat-option>
+              <mat-option value="2022">2022</mat-option>
+              <mat-option value="2023">2023</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+            <mat-label>Branch</mat-label>
+
+            <mat-select>
+              <mat-option value="AE">AE</mat-option>
+              <mat-option value="Civil">Civil</mat-option>
+              <mat-option value="Mech">Mech</mat-option>
+              <mat-option value="D">D</mat-option>
+            </mat-select>
+
+          
+          </mat-form-field>
+          <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+            <mat-label>Section</mat-label>
+
+            <mat-select>
+              <mat-option value="A">A</mat-option>
+              <mat-option value="B">B</mat-option>
+              <mat-option value="C">C</mat-option>
+              <mat-option value="D">D</mat-option>
+            </mat-select>
+
+          
+          </mat-form-field>
+
+          <mat-form-field class="mat-field" name="offerCount" appearance="outline" style="width: 100%">
+            <mat-label>No Of Offers</mat-label>
+
+            <mat-select  [(ngModel)]=s.offers name="offerCount">
+              <mat-option value="option1">1</mat-option>
+              <mat-option value="option3">2</mat-option>
+            </mat-select>
+
+          </mat-form-field>
+          <mat-form-field class="mat-field" appearance="outline" >
+            <mat-label>Roll Number</mat-label>
+
+            <input matInput type="text" name="rollNo" placeholder="EMP Name"  [(ngModel)]=s.rollNo/>
+            <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+            <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+          </mat-form-field>
+          <!-- </div> -->
+          <mat-form-field class="mat-field" appearance="outline">
+            <mat-label>Name Of the student</mat-label>
+
+            <input matInput type="text" name="studentName" placeholder="Designation"  [(ngModel)]=s.studentName />
+            <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+            <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+          </mat-form-field>
+          <mat-form-field class="mat-field" appearance="outline">
+            <mat-label>Name of the employer</mat-label>
+
+            <input matInput type="text" name="employer" placeholder="Account Number"  [(ngModel)]=s.employerName />
+            <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+            <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+          </mat-form-field>
+          <mat-form-field class="mat-field" appearance="outline">
+            <mat-label>Salary Package</mat-label>
+
+            <input matInput type="text" name="package" placeholder="PAN"  [(ngModel)]=s.package />
+            <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+            <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+          </mat-form-field>
+          <mat-form-field class="mat-field" appearance="outline">
+            <mat-label>Type of the Company</mat-label>
+            <mat-select  [(ngModel)]=s.companyType name="companyType">
+              <mat-option value="option1">IT</mat-option>
+              <mat-option value="option3">Core</mat-option>
+            </mat-select>
+
+            <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+        <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+          </mat-form-field>
+          <mat-form-field class="mat-field" appearance="outline">
+            <mat-label>On Campus/Off Campus</mat-label>
+
+            <mat-select  [(ngModel)]="s.campusType" name="campusType">
+              <mat-option value="option1">On Campus</mat-option>
+              <mat-option value="option3">Off Campus</mat-option>
+            </mat-select>
+            <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+        <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+          </mat-form-field>
+          <!-- <mat-form-field class="mat-field" appearance="outline">
+            <mat-label>Upload the offer letter of intent</mat-label>
+
+            <input matInput type="text" name="uan" placeholder="UAN" required />
+            
+          </mat-form-field>
+          <mat-form-field class="mat-field" appearance="outline">
+            <mat-label>Upload the offer letter/Browse</mat-label>
+
+            <input matInput type="text" name="uan" placeholder="UAN" required />
+            
+          </mat-form-field>
+          <mat-form-field class="mat-field" appearance="outline">
+            <mat-label>Appointment letter Ref.No</mat-label>
+
+            <input matInput type="text" name="uan" placeholder="UAN" required />
+            
+          </mat-form-field> -->
+          <mat-form-field class="mat-field" appearance="outline" name="dateOfApp">
+            <mat-label>Date of Appointment</mat-label>
+            <input matInput name="dOB1" [matDatepicker]="datePicker" required>
+
+            <mat-datepicker-toggle [for]="datePicker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #datePicker></mat-datepicker>
+            <mat-error>DOB is required</mat-error>
+          </mat-form-field>
+          
+          <!-- <div class="Rbutton"> -->
+            <button mat-raised-button (click)="storeData(data.value)" [disabled]="data.form.invalid">Register</button>
+          <!-- </div> -->
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>

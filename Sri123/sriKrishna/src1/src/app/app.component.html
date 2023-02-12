@@ -1,0 +1,53 @@
+<!-- <app-register></app-register> -->
+<mat-toolbar class="toolbar" style="background-color: orange;" *ngIf="isLoggedInCall()">
+    <mat-toolbar-row>
+        <!-- <button mat-icon-button (click)="openSideNav()"  class="example-icon" >
+            <mat-icon>more_vert</mat-icon> Toucan
+            </button>  -->
+
+        <span class="example-spacer"></span>
+
+
+
+
+        <span class="pd-l-10" style="font-size: 80%;">{{today| date: 'dd/MM/yyyy , h:mm a'}}</span>
+        <button class="pd-l-10" mat-button (click)="toHome()" class="example-icon">Change Password</button>
+        <button class="pd-l-10" mat-button (click)="toHome()" class="example-icon">Profile</button>
+        <button class="pd-l-10" mat-button (click)="toHome()" class="example-icon">Logout</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened *ngIf="isLoggedIn">
+        <mat-action-list class="list">
+            <button mat-list-item>Master Database</button>
+            <button mat-list-item (click)="openPlacement()">Placemnet</button>
+            <button mat-list-item (click)="openHigherEdu()">Higher Education</button>
+            <button mat-list-item (click)="openDialog()">Qualifying National/International Exam <br>
+                (eg:GATE/GMAT/CAT/GRE/IELTS)</button>
+            <button mat-list-item (click)="openExpanTable()">Internship</button>
+            <button mat-list-item (click)="openExpanTable()">Curricular Activities: <br>(eg:Participating in technical
+                events)</button>
+            <button mat-button [matMenuTriggerFor]="belowMenu">Co-Curricular Activities:</button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button mat-menu-item>Sports</button>
+                <button mat-menu-item>Cultural</button>
+            </mat-menu>
+            <button mat-list-item>Certification Courses: <br>NPTEL,Coursera,Udemy etc.</button>
+            <button mat-list-item>Trainings/Workshops</button>
+            <button mat-button [matMenuTriggerFor]="afterMenu">Projects</button>
+            <mat-menu #afterMenu="matMenu" xPosition="after">
+                <button mat-menu-item>Course Project</button>
+                <button mat-menu-item>Mini Project</button>
+                <button mat-menu-item>Major Project</button>
+            </mat-menu>
+            <button mat-list-item>Hackathons</button>
+        </mat-action-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content">
+        <div fxLayout="row" fxLayoutAlign="center center" class="appBG">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
