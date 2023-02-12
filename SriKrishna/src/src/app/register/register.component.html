@@ -1,0 +1,36 @@
+<div fxLayout="row" fxLayoutAlign="center center" *ngIf="hideLogintab">
+    <mat-card style="width:300px; height:300px">
+        <mat-card-header>
+            <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+        <form fxLayout="column" fxLayoutAlign="center center" name="register" #Loginx="ngForm">
+            <mat-form-field class="mat-field" appearance="outline" style="padding-top: 4%;">
+                <mat-label>Student/Faculty</mat-label>
+                <input matInput type="email" name="uemail" [(ngModel)]=useremail required #emailx="ngModel">
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-error *ngIf="emailx.errors?.['required']">Email is required</mat-error>
+                <mat-error *ngIf="emailx.errors?.['pattern']">please enter a valid email</mat-error>
+            </mat-form-field>
+            <mat-form-field class="mat-field" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" [(ngModel)]=userPwd required name="password" #passwordx="ngModel">
+                <mat-error *ngIf="passwordx.errors?.['required']"> password is required</mat-error>
+                <mat-error *ngIf="passwordx.errors?.['pattern']"> please enter valid password</mat-error>
+                <!-- <mat-error *ngIf="passwordx.errors?.['pattern']">please enter a valid password</mat-error> -->
+
+            </mat-form-field>
+
+        </form>
+
+        <div class="Rbutton">
+            <button class="button3" mat-raised-button (click)="loginCall()" [disabled]="Loginx.form.invalid"
+                style="color: primary;">Login</button>
+        </div>
+
+        <!-- </mat-tab> -->
+        <!-- </mat-tab-group> -->
+
+    </mat-card>
+</div>
+
+<!--  [selectedIndexChange]="selectedIndex.value -->

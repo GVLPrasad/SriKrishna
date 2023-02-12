@@ -1,0 +1,141 @@
+<!-- <mat-card style="width:600px"> -->
+<!-- <mat-card-title fxLayoutAlign="center ceenter">Placement</mat-card-title>
+<mat-card-content> -->
+<!-- <section style="padding-left: 50px;padding-top:30px "> -->
+<form fxLayout="column" name="data" #data="ngForm">
+  <div fxLayout="row" fxLayoutGap="40px">
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>Year of Passedout</mat-label>
+      <mat-select [(ngModel)]=s.yesrOfPass name="yearOfPas">
+        <mat-option value="2020">2020</mat-option>
+        <mat-option value="2021">2021</mat-option>
+        <mat-option value="2022">2022</mat-option>
+        <mat-option value="2023">2023</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>Branch</mat-label>
+      <mat-select [(ngModel)]=s.branch name="branch">
+        <mat-option value="AE">AE</mat-option>
+        <mat-option value="Civil">Civil</mat-option>
+        <mat-option value="Mech">Mech</mat-option>
+        <mat-option value="Information Technology">Information Technology</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="40px">
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>Section</mat-label>
+      <mat-select [(ngModel)]=s.section name="section">
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B">B</mat-option>
+        <mat-option value="C">C</mat-option>
+        <mat-option value="D">D</mat-option>
+      </mat-select>
+
+
+    </mat-form-field>
+
+    <mat-form-field class="mat-field" name="offerCount" appearance="outline" style="width: 100%">
+      <mat-label>No Of Offers</mat-label>
+      <mat-select [(ngModel)]=s.offers name="noOfOffers">
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="40px">
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>Roll Number</mat-label>
+      <input matInput type="text" name="rollNo" [(ngModel)]=s.rollNo />
+      <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+            <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+    </mat-form-field>
+    <!-- </div> -->
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>Name Of the student</mat-label>
+
+      <input matInput type="text" name="studentName" [(ngModel)]=s.studentName />
+      <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+            <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="40px">
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>Name of the employer</mat-label>
+
+      <input matInput type="text" name="employer" [(ngModel)]=s.employerName />
+      <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+            <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+    </mat-form-field>
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>Salary Package</mat-label>
+
+      <input matInput type="text" name="package" [(ngModel)]=s.package />
+      <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+            <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="40px">
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>Type of the Company</mat-label>
+      <mat-select [(ngModel)]=s.companyType name="companyType">
+        <mat-option value="option1">IT</mat-option>
+        <mat-option value="option3">Core</mat-option>
+      </mat-select>
+
+      <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+        <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+    </mat-form-field>
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>On Campus/Off Campus</mat-label>
+
+      <mat-select [(ngModel)]="s.campusType" name="campusType">
+        <mat-option value="option1">On Campus</mat-option>
+        <mat-option value="option3">Off Campus</mat-option>
+      </mat-select>
+      <!-- <mat-error *ngIf="fName.errors?.['required']"> Name is required</mat-error>
+        <mat-error *ngIf="fName.errors?.['pattern']"> Name is invalid</mat-error> -->
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="40px">
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>Upload the offer letter of intent</mat-label>
+
+      <input matInput type="text" required />
+
+    </mat-form-field>
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>Upload the offer letter/Browse</mat-label>
+
+      <input matInput type="text" name="uan" required />
+
+    </mat-form-field>
+  </div>
+  <div fxLayout="row" fxLayoutGap="40px">
+    <mat-form-field class="mat-field" appearance="outline" style="width: 100%">
+      <mat-label>Appointment letter Ref.No</mat-label>
+
+      <input matInput type="text" name="uan" required [(ngModel)]=s.appointmentRefNo name="appointRefNo" />
+
+    </mat-form-field>
+    <mat-form-field class="mat-field" appearance="outline" name="dateOfApp" style="width: 100%">
+      <mat-label>Date of Appointment</mat-label>
+      <input matInput name="dOB1" [matDatepicker]="datePicker" required [(ngModel)]=s.dateOfAppointnet name="dateOfApp">
+
+      <mat-datepicker-toggle [for]="datePicker" matSuffix></mat-datepicker-toggle>
+      <mat-datepicker #datePicker></mat-datepicker>
+      <mat-error>DOB is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <!-- <div class="Rbutton"> -->
+  <button mat-raised-button (click)="storeData(data.value, data )" [disabled]="data.form.invalid"
+    style="background-color: green;">Register</button>
+</form>
+<!-- </div> -->
+
+
+<!-- </section> -->
+<!-- </mat-card-content> -->
+<!-- </mat-card> -->

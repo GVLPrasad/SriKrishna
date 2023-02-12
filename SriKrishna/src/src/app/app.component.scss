@@ -1,0 +1,24 @@
+.appBG{
+    height: 100vh;
+    // background-color: rgb(83, 146, 185);
+    opacity: 0.7;
+    
+    background-repeat: no-repeat;
+    // background-size: cover;background-image: url('https://t4.ftcdn.net/jpg/02/87/11/31/360_F_287113142_8XLkz9kGNKWdvazBEgl8GoymDG5YBsa9.jpg');
+    
+    width: 100%;
+    height: 980px;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .pd-l-10 {
+    padding-left: 50px;
+
+    font-size: 12px;
+    // background-color: orange;
+  }
+  .example-icon
+  {
+    font-size: 80%;
+  }

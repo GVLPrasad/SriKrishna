@@ -1,0 +1,54 @@
+<!-- <p>bottom-sheet works!</p> -->
+<mat-list class="bsBorder">
+
+    <!-- <div fxLayout="row" fxLayoutGap="16px" style="width: 840px;"> -->
+
+    <div fxLayout="row" fxLayoutGap="16px" style="width: 840px;">
+        <mat-list-item>
+            <div fxLayout="column" fxFlex="20">
+                Name
+            </div>
+            <div fxLayout="column" fxFlex="33">
+                Email
+            </div>
+            <div fxLayout="column" fxFlex="10">
+                DOB
+            </div>
+            <div fxLayout="column" fxFlex="11">
+                Gender
+            </div>
+            <div fxLayout="column" fxFlex="14">
+                Password
+            </div>
+            <div fxLayout="column" fxFlex="12">
+                Phone
+            </div>
+        </mat-list-item>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-list-item *ngFor="let uData of formData">
+
+        <div fxLayout="row" fxLayoutGap="16px" style="width: 840px;">
+            <div fxLayout="column" fxFlex="20">
+                {{uData.fName}}
+            </div>
+            <div fxLayout="column" fxFlex="33">
+                {{uData.email |emailMask}}
+            </div>
+            <div fxLayout="column" fxFlex="12">
+                {{uData.dOB1 | date: 'dd/MM/yyyy'}}
+            </div>
+            <div fxLayout="column" fxFlex="8">
+                {{uData.g1}}
+            </div>
+            <div fxLayout="column" fxFlex="10">
+                {{uData.password |passwordMask}}
+            </div>
+            <div fxLayout="column" fxFlex="17">
+                {{uData.phone |mobileMask}}
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+    </mat-list-item>
+    <!-- </div> -->
+</mat-list>
